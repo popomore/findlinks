@@ -34,6 +34,8 @@ npm install findlinks -g
 findlinks https://eggjs.org/
 ```
 
+Thanks https://cn.vuejs.org for test fixtures
+
 ## License
 
 (The MIT License)
