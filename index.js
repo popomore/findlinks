@@ -25,7 +25,6 @@ co(function* () {
 // refererUrl -> currentUrl -> linkUrl
 function* check(currentUrl, refererUrl) {
   const ret = yield urllib.request(currentUrl, {
-    followRedirect: true,
     timeout: 30 * 1000,
   });
   urlCache.add(currentUrl);
