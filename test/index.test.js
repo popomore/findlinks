@@ -1,10 +1,9 @@
 'use strict';
 
-const path = require('path');
-const coffee = require('coffee');
+const assert = require('assert');
 const koa = require('koa');
 const serve = require('koa-static');
-
+const findlinks = require('..');
 
 describe('test/index.test.js', () => {
 
@@ -17,14 +16,31 @@ describe('test/index.test.js', () => {
   });
   after(done => server.close(done));
 
-  it('should add prefix', () => {
-    return coffee.fork(path.join(__dirname, '../index.js'), [ 'http://127.0.0.1:3000' ])
-    .debug()
-    .expect('stdout', /#0 \[200] request http:\/\/127\.0\.0\.1:3000/)
-    .expect('stderr', /#58 \[404] request http:\/\/127\.0\.0\.1:3000\/guide\/render-function, referer http:\/\/127.0.0.1:3000\/v2\/api/)
-    .notExpect('stdout', /#api/)
-    .expect('code', 0)
-    .end();
+  it('should get result', function* () {
+    const result = yield findlinks({ src: 'http://127.0.0.1:3000' });
+    assert.deepEqual(result, {
+      count: 70,
+      success: 68,
+      fail: 2,
+    });
+  });
+
+  it('should reset to function when info and error are not function', function* () {
+    const result = yield findlinks({ src: 'http://127.0.0.1:3000', logger: { error: '', info: '' } });
+    assert.deepEqual(result, {
+      count: 70,
+      success: 68,
+      fail: 2,
+    });
+  });
+
+  it('should get result when request a noexist url', function* () {
+    const result = yield findlinks({ src: 'http://127.0.0.1:3000/noexist' });
+    assert.deepEqual(result, {
+      count: 1,
+      success: 0,
+      fail: 1,
+    });
   });
 
 });
