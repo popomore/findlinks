@@ -13,11 +13,13 @@ module.exports = {
     'egg-ci',
     'eslint',
     'eslint-config-egg',
-    'intelli-espower-loader',
-    'power-assert',
   ],
   keep: [
   ],
   semver: [
+    'egg-bin@1',
+    'koa@1',
+    'koa-static@2',
+    'cheerio@0',
   ],
 };

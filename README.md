@@ -36,6 +36,18 @@ findlinks https://eggjs.org/
 
 Thanks https://cn.vuejs.org for test fixtures
 
+## API
+
+If you require this module, it will return a function.
+
+```js
+const findlinks = require('findlinks');
+findlinks({ src: 'https://eggjs.org/' })
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+// { count: xx, success: xx, fail: xx }
+```
+
 ## License
 
 (The MIT License)
