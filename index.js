@@ -2,7 +2,7 @@
 
 'use strict';
 
-const Checker = require('./checker');
+const Checker = require('./lib/checker');
 
 module.exports = findlinks;
 

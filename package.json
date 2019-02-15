@@ -27,6 +27,7 @@
     "intelli-espower-loader": "^1.0.1",
     "koa": "^1.6.2",
     "koa-static": "^2.1.0",
+    "puppeteer": "^1.12.2",
     "ypkgfiles": "^1.4.0"
   },
   "engines": {
@@ -37,7 +38,7 @@
   },
   "scripts": {
     "test": "npm run lint && npm run test-local",
-    "test-local": "egg-bin test",
+    "test-local": "egg-bin test --timeout 240000",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && ypkgfiles --check && npm run cov",
