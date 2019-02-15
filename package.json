@@ -39,7 +39,7 @@
   },
   "scripts": {
     "test": "npm run lint && npm run test-local",
-    "test-local": "egg-bin test --timeout 240000",
+    "test-local": "egg-bin test --timeout 600000",
     "cov": "egg-bin cov --timeout 24000",
     "lint": "eslint .",
     "ci": "npm run lint && ypkgfiles --check && npm run cov",
