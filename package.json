@@ -13,28 +13,27 @@
     "links"
   ],
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.4.2",
     "cheerio": "^0.22.0",
-    "co": "^4.6.0",
-    "urllib": "^2.22.0"
+    "urllib": "^2.33.0"
   },
   "devDependencies": {
-    "autod": "^2.8.0",
-    "coffee": "^3.3.2",
-    "egg-bin": "^1.10.3",
-    "egg-ci": "^1.6.0",
-    "eslint": "^3.19.0",
-    "eslint-config-egg": "^4.2.0",
+    "autod": "^3.0.1",
+    "coffee": "^5.2.1",
+    "egg-bin": "^1.11.1",
+    "egg-ci": "^1.11.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
     "intelli-espower-loader": "^1.0.1",
-    "koa": "^1.4.0",
+    "koa": "^1.6.2",
     "koa-static": "^2.1.0",
     "ypkgfiles": "^1.4.0"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "ci": {
-    "version": "4, 6, 7"
+    "version": "8, 10"
   },
   "scripts": {
     "test": "npm run lint && npm run test-local",

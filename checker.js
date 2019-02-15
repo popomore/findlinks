@@ -33,16 +33,16 @@ class Checker {
     };
   }
 
-  * check() {
-    yield this._check(this.srcUrl);
+  async check() {
+    await this._check(this.srcUrl);
     return this.result;
   }
 
   // refererUrl -> currentUrl -> linkUrl
-  * _check(currentUrl, refererUrl) {
+  async _check(currentUrl, refererUrl) {
     this.urlCache.add(currentUrl);
 
-    const ret = yield urllib.request(currentUrl, {
+    const ret = await urllib.request(currentUrl, {
       timeout: 30 * 1000,
     });
     if (ret.status >= 300) {
@@ -61,7 +61,7 @@ class Checker {
       const linkHost = url.parse(linkUrl).host;
       // ignore when it has cached or has different host
       if (!this.urlCache.has(linkUrl) && this.srcHost === linkHost) {
-        yield this._check(linkUrl, currentUrl);
+        await this._check(linkUrl, currentUrl);
       }
     }
   }
@@ -71,12 +71,12 @@ class Checker {
     for (const attribute of this.attributes) {
       // get links from attributes
       $(html)
-      .find(attribute[0])
-      .each(function(_, ele) {
-        let url = $(ele).attr(attribute[1]);
-        url = resolveUrl(url, baseUrl);
-        urls.push(url);
-      });
+        .find(attribute[0])
+        .each(function(_, ele) {
+          let url = $(ele).attr(attribute[1]);
+          url = resolveUrl(url, baseUrl);
+          urls.push(url);
+        });
     }
     return urls;
   }

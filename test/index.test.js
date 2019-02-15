@@ -16,8 +16,8 @@ describe('test/index.test.js', () => {
   });
   after(done => server.close(done));
 
-  it('should get result', function* () {
-    const result = yield findlinks({ src: 'http://127.0.0.1:3000' });
+  it('should get result', async () => {
+    const result = await findlinks({ src: 'http://127.0.0.1:3000' });
     assert.deepEqual(result, {
       count: 70,
       success: 68,
@@ -25,8 +25,8 @@ describe('test/index.test.js', () => {
     });
   });
 
-  it('should reset to function when info and error are not function', function* () {
-    const result = yield findlinks({ src: 'http://127.0.0.1:3000', logger: { error: '', info: '' } });
+  it('should reset to function when info and error are not function', async () => {
+    const result = await findlinks({ src: 'http://127.0.0.1:3000', logger: { error: '', info: '' } });
     assert.deepEqual(result, {
       count: 70,
       success: 68,
@@ -34,8 +34,8 @@ describe('test/index.test.js', () => {
     });
   });
 
-  it('should get result when request a noexist url', function* () {
-    const result = yield findlinks({ src: 'http://127.0.0.1:3000/noexist' });
+  it('should get result when request a noexist url', async () => {
+    const result = await findlinks({ src: 'http://127.0.0.1:3000/noexist' });
     assert.deepEqual(result, {
       count: 1,
       success: 0,
