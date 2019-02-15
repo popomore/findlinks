@@ -11,7 +11,7 @@ describe('test/bin.test.js', () => {
   let app;
   let server;
   before(done => {
-    app = koa();
+    app = new koa();
     app.use(serve(__dirname + '/fixtures'));
     server = app.listen(3000, done);
   });
