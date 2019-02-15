@@ -14,19 +14,20 @@
   ],
   "dependencies": {
     "chalk": "^2.4.2",
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.2",
+    "puppeteer": "^1.12.2",
     "urllib": "^2.33.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
     "coffee": "^5.2.1",
-    "egg-bin": "^1.11.1",
+    "egg-bin": "^4.11.0",
     "egg-ci": "^1.11.0",
     "eslint": "^5.13.0",
     "eslint-config-egg": "^7.1.0",
     "intelli-espower-loader": "^1.0.1",
-    "koa": "^1.6.2",
-    "koa-static": "^2.1.0",
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0",
     "puppeteer": "^1.12.2",
     "ypkgfiles": "^1.4.0"
   },
