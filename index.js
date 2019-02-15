@@ -2,12 +2,11 @@
 
 'use strict';
 
-const co = require('co');
 const Checker = require('./checker');
 
-module.exports = co.wrap(findlinks);
+module.exports = findlinks;
 
-function* findlinks(opt) {
+async function findlinks(opt) {
   const checker = new Checker(opt);
-  return yield checker.check();
+  return await checker.check();
 }
