@@ -1,6 +1,6 @@
 {
   "name": "findlinks",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Find the broken links",
   "repository": {
     "type": "git",
