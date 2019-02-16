@@ -16,10 +16,5 @@ module.exports = {
   ],
   keep: [
   ],
-  semver: [
-    'egg-bin@1',
-    'koa@1',
-    'koa-static@2',
-    'cheerio@0',
-  ],
+  semver: [],
 };
