@@ -1,4 +1,13 @@
 
+2.1.0 / 2019-03-05
+==================
+
+**features**
+  * [[`effbe76`](http://github.com/popomore/findlinks/commit/effbe7629f2679b369293d66cbd066c7cd691811)] - feat: support allowHost option (#7) (吖猩 <<whxaxes@qq.com>>)
+
+**fixes**
+  * [[`0ed25fc`](http://github.com/popomore/findlinks/commit/0ed25fc8d29f9b37ea3478858e635b0b825c15fa)] - fix: remove puppeteer (#8) (Haoliang Gao <<sakura9515@gmail.com>>)
+
 2.0.0 / 2019-02-16
 ==================
 
