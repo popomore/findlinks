@@ -43,4 +43,21 @@ describe('test/index.test.js', () => {
     });
   });
 
+  it('should request custom host which is configured in allowHost', async () => {
+    const result = await findlinks({
+      src: 'http://127.0.0.1:3000/custom.html',
+      allowHost: [ 'cdn.jsdelivr.net' ],
+      attributes: [
+        [ 'script', 'src' ],
+        [ 'link', 'href' ],
+      ],
+    });
+
+    assert.deepEqual(result, {
+      count: 4,
+      success: 0,
+      fail: 2,
+    });
+  });
+
 });
