@@ -55,7 +55,7 @@ describe('test/index.test.js', () => {
 
     assert.deepEqual(result, {
       count: 4,
-      success: 0,
+      success: 2,
       fail: 2,
     });
   });
