@@ -15,7 +15,6 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.2",
-    "puppeteer": "^1.12.2",
     "urllib": "^2.33.0"
   },
   "devDependencies": {
