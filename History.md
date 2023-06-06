@@ -1,4 +1,10 @@
 
+2.2.0 / 2023-06-06
+==================
+
+**features**
+  * [[`eb65f6a`](http://github.com/popomore/findlinks/commit/eb65f6aa3570a2accea1db48f19c56c33179f54f)] - feat: Expose puppteerRenderingTimeout (#9) (William.Tung <<maledong_public@foxmail.com>>)
+
 2.1.0 / 2019-03-05
 ==================
 
